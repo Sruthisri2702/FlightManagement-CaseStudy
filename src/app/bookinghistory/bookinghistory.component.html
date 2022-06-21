@@ -1,0 +1,41 @@
+<app-dashuser></app-dashuser>
+<nav class="navbar navbar-light bg-primary py-0">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">Booking History</h1>
+        <form [formGroup]="searchByEmail">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input type="text" formControlName="Email" placeholder="Type your email here..">
+            <button type="button" (click)="GetBookingHistory()" class="btn btn-success" data-bs-toggle="modal" >Search</button>
+        </form>
+    </div>
+</nav>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Flight Number</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Total Cost</th>
+            <th scope="col">Start DateTime</th>
+            <th scope ="col">End DateTime</th>
+            <th scope ="col">No of Seats</th>
+            <th scope ="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let booking of bookingHistory">
+           <td>{{booking.name}}</td> 
+           <td>{{booking.flightNumber}}</td> 
+           <td>{{booking.fromPlace}}</td> 
+           <td>{{booking.toPlace}}</td> 
+           <td>{{booking.ticketCost}}</td> 
+           <td>{{booking.startDateTime}}</td> 
+           <td>{{booking.endDateTime}}</td> 
+           <td>{{booking.noOfSeats}}</td> 
+           <td>
+               <button (click)="DeleteBooking(booking)" class="btn btn-danger">Block</button>
+           </td> 
+        </tr>
+    </tbody>
+</table>

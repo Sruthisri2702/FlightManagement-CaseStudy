@@ -1,0 +1,42 @@
+<app-dashuser></app-dashuser>
+<nav class="navbar navbar-light bg-primary py-0">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">PNR Details</h1>
+        <form [formGroup]="searchByPNR">
+            <label for="exampleInputEmail1" class="form-label">PNR Number</label>
+            <input type="text" formControlName="pnr" placeholder="Enter your PNR number">
+            <button type="button" (click)="SearchByPnr()" class="btn btn-success" data-bs-toggle="modal" >Search</button>
+        </form>
+    </div>
+</nav>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Flight Number</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Total Cost</th>
+            <th scope="col">Start DateTime</th>
+            <th scope ="col">End DateTime</th>
+            <th scope ="col">No of Seats</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let pnr of pnrDetails">
+           <td>{{pnr.name}}</td> 
+           <td>{{pnr.email}}</td> 
+           <td>{{pnr.flightNumber}}</td> 
+           <td>{{pnr.fromPlace}}</td> 
+           <td>{{pnr.toPlace}}</td> 
+           <td>{{pnr.ticketCost}}</td> 
+           <td>{{pnr.startDateTime}}</td> 
+           <td>{{pnr.endDateTime}}</td> 
+           <td>{{pnr.noOfSeats}}</td> 
+           <!-- <td>
+               <button (click)="DeleteBooking(booking)" class="btn btn-danger">Block</button>
+           </td>  -->
+        </tr>
+    </tbody>
+</table>

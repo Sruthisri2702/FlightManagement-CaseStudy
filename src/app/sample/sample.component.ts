@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { AirlineModel } from './sample.component.model';
 import { SampleService } from '../services/sample.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-sample',
   templateUrl: './sample.component.html',
@@ -12,7 +14,7 @@ export class SampleComponent implements OnInit {
   airlineDetails !: any;
 
   airlineModelObj : AirlineModel = new AirlineModel();
-  constructor(private formBuilder: FormBuilder, private _airlineData: SampleService) 
+  constructor(private formBuilder: FormBuilder, private _airlineData: SampleService, private router : Router) 
   { 
       // this._airlineData.getAllAirlines().subscribe(
       //   data => {this.airlineDetails = data , console.log(this.airlineDetails)});
@@ -49,17 +51,6 @@ export class SampleComponent implements OnInit {
 
   getAllAirline(){
 
-//     1: {airlineId: 1013, airlineName: "Royals", contactNumber: "893055", contactAddress: "Pune",…}
-// airlineId: 1013
-// airlineName: "Royals"
-// blocked: null
-// contactAddress: "Pune"
-// contactNumber: "893055"
-// disAmount: null
-// disCode: null
-// logo: "RoyalAirlines"
-// schedules: null
-
     this._airlineData.getAllAirline().subscribe(
       data => {
         this.airlineDetails = data; 
@@ -75,4 +66,9 @@ export class SampleComponent implements OnInit {
     )
 
   }
+  manageSchedule(){
+    this.router.navigate(["manageschedule"]);
+
+  }
+  
 }

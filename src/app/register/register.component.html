@@ -1,0 +1,59 @@
+<!-- Section: Design Block -->
+<section class="">
+    <!-- Jumbotron -->
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+      <div class="container">
+        <div class="row gx-lg-5 align-items-center">
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <h1 class="my-5 display-3 fw-bold ls-tight">
+              Flight <br />
+              <span class="text-primary">Management</span>
+            </h1>
+            <p style="color: hsl(217, 10%, 50.8%)">
+              <img src="assets\images\homepage.jpg" alt="img" style="max-width: 500px; max-height: 250px">
+            </p>
+          </div>
+  
+          <div class="col-lg-6 mb-5 mb-lg-0">
+            <div class="card">
+              <div class="card-body py-5 px-md-5">
+                <form [formGroup]="formValue">
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <div class="row">
+                   <h2>Register</h2>
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <input type="text" formControlName="name" id="form3Example1" class="form-control" placeholder="Enter your name" />
+                    <!-- <label class="form-label" for="form3Example3">Email address</label> -->
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" formControlName="username" id="form3Example2" class="form-control" placeholder="Enter Username" />
+                    <!-- <label class="form-label" for="form3Example3">Email address</label> -->
+                  </div>
+  
+                  <div class="form-outline mb-4">
+                    <input type="password" formControlName="password" id="form3Example3" class="form-control" placeholder="Enter Password" />
+                    <!-- <label class="form-label" for="form3Example4">Password</label> -->
+                  </div>
+  
+                  <!-- Submit button -->
+                  <button type="submit" (click)="RegisterUser()" class="btn btn-primary btn-block mb-4">
+                    Sign up
+                  </button>
+
+                  <!-- Register buttons -->
+                  <div class="text-left">
+                     <p><a routerLink="/userlogin" routerLinkActive="active"
+                      class="btn btn-link btn-floating">Back to Login</a></p>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Jumbotron -->
+  </section>
+  <!-- Section: Design Block -->

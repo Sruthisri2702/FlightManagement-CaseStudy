@@ -1,1 +1,59 @@
-<p>booking works!</p>
+<app-dashuser></app-dashuser>
+<nav class="navbar navbar-light bg-primary py-0">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">Book Flight</h1>
+        <div class="d-flex">
+            <form [formGroup]="searchFlight">
+            <label for="exampleInputEmail1" class="form-label">From</label>
+            <input type="text" formControlName="fromplace" placeholder="From Place">
+            <label for="exampleInputEmail1" class="form-label">To</label>
+            <input type="text" formControlName="toplace" placeholder="To Place">
+            <button type="button" (click)="SearchSchedule()" class="btn btn-success" data-bs-toggle="modal" >Search</button>
+           </form>
+        </div>
+    </div>
+</nav>
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Flight Number</th>
+            <th scope="col">Airline Name</th>
+            <th scope="col">From Place</th>
+            <th scope="col">To Place</th>
+             <th scope="col">Start DateTime</th>
+            <th scope="col">End DateTime</th>
+            <th scope="col">Total Cost</th>
+            <th scope="col">No Of Seats</th>
+            <th scope ="col">Meal(V/NV)</th>
+            <!--<th scope ="col">Scheduled Days</th>
+            <th scope ="col">Instrument Used</th>-->
+            <th scope ="col">Business Seats</th>
+            <th scope ="col">Non-Business Seats</th>
+            <th scope ="col">Action</th>
+            </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let schedule of searchResult">
+           <td>{{schedule.flightNumber}}</td> 
+           <td>{{schedule.airlineName}}</td> 
+           <td>{{schedule.fromPlace}}</td> 
+           <td>{{schedule.toPlace}}</td> 
+           <!-- <td>NULL</td> 
+           <td>NULL</td>  -->
+           <td>{{schedule.startDateTime}}</td> 
+           <td>{{schedule.endDateTime}}</td> 
+           <td>{{schedule.totalCost}}</td> 
+           <td>{{schedule.rows}}</td> 
+           <td>{{schedule.meal}}</td> 
+           <!--<td>{{schedule.scheduledDays}}</td> 
+           <td>{{schedule.instrumentUsed}}</td>-->
+           <td>{{schedule.businessSeats}}</td> 
+           <td>{{schedule.nonBusinessSeats}}</td> 
+           <td>
+               <button type="button"(click)="Book(schedule)" class="btn btn-danger">Book</button>
+           </td> 
+        </tr>
+    </tbody>
+</table>
+
+  

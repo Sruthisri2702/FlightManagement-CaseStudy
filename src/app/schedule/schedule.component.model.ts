@@ -4,8 +4,7 @@ export class ScheduleModel{
     FromPlace : string ='';
     ToPlace : string ='';
     StartDateTime = new Date();
-    //StartDateTime: Date;
-    //EndDateTime: Date;
+    EndDateTime = new Date();    
     TotalCost: number = 0;
     Meal : string ='';
     ScheduledDays : string ='';

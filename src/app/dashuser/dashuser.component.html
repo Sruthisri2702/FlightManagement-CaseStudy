@@ -1,0 +1,17 @@
+<nav class="navbar navbar-light bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand py-0">
+            <img src="assets\images\final.png" alt="img" style="max-width: 60px; max-height: 24px">
+        </a>
+        <div class="d-flex">
+            <a routerLink="/flightbooking" routerLinkActive="active"
+            class="link-secondary"><h6>Book Flights</h6></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a routerLink="/pnrdetails" routerLinkActive="active"
+            class="link-secondary"><h6>PNR Details</h6></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a routerLink="/bookinghistory" routerLinkActive="active"
+            class="link-secondary"><h6>Booking History</h6></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a (click)="Logout()"
+            class="link-secondary"><h6>Log Out</h6></a>&nbsp;
+        </div>
+    </div>
+</nav>

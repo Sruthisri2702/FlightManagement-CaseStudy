@@ -1,0 +1,15 @@
+<nav class="navbar navbar-light bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand py-0">
+            <img src="assets\images\final.png" alt="img" style="max-width: 60px; max-height: 24px">
+        </a>
+        <div class="d-flex">
+            <a routerLink="/manageairline" routerLinkActive="active"
+            class="link-secondary"><h6>Manage Airlines</h6></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a routerLink="/manageschedule" routerLinkActive="active"
+            class="link-secondary"><h6>Manage Schedule</h6></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a (click)="Logout()"
+            class="link-secondary"><h6>Log Out</h6></a>&nbsp;
+        </div>
+    </div>
+</nav>

@@ -14,22 +14,12 @@ export class ScheduleComponent implements OnInit {
   scheduleDetails !: any;
   airlineDetails: any;
 
-  selectedLevel: any;
-  data:Array<Object> = [
-      {id: 0, name: "name1"},
-      {id: 1, name: "name2"}
-  ];
-
-  selected(){
-    console.log(this.selectedLevel)
-  }
-
-
   scheduleModelObj : ScheduleModel = new ScheduleModel();
   constructor(
     private formBuilder: FormBuilder, 
     private _scheduleData: ScheduleService,
-    private _airlineData: SampleService) 
+    private _airlineData: SampleService)
+  
   { 
       
   }
@@ -42,7 +32,7 @@ export class ScheduleComponent implements OnInit {
         FromPlace :[''],
         ToPlace :[''],
         StartDateTime:new Date(),
-        //EndDateTime:[''],
+        EndDateTime:new Date(),
         TotalCost:[''],
         Rows:[''],
         Meal:[''],
@@ -84,6 +74,7 @@ export class ScheduleComponent implements OnInit {
     this.scheduleModelObj.FromPlace= this.formValue.value.FromPlace;
     this.scheduleModelObj.ToPlace= this.formValue.value.ToPlace;
     this.scheduleModelObj.StartDateTime=this.formValue.value.StartDateTime;
+    this.scheduleModelObj.EndDateTime=this.formValue.value.EndDateTime;
     this.scheduleModelObj.TotalCost= this.formValue.value.TotalCost;
     this.scheduleModelObj.Rows= this.formValue.value.Rows;
     this.scheduleModelObj.Meal= this.formValue.value.Meal;
@@ -114,5 +105,5 @@ export class ScheduleComponent implements OnInit {
     )
 
   }
-
+  
 }

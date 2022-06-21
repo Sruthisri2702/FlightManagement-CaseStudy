@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  statusCode401 : 401,
+  registerurl : "api/v1.0/flight/login/register"
 };
 
 /*

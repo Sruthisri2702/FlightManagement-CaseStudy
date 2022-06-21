@@ -1,0 +1,137 @@
+<app-dashuser></app-dashuser>
+<nav class="navbar navbar-light bg-primary py-0">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">Manage Booking</h1>
+        <!-- <div class="d-flex">
+            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#scheduleModal">Add Schedule</button>
+        </div> -->
+    </div>
+</nav>
+<section class="vh-100">
+    <div class="container h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+       
+        <form [formGroup]="booking"  >
+             <!-- {{bookForm.value  | json }}  -->
+            <div >
+                <div class="col-md-5">
+                    <div class="mb-3">
+                      </div>
+                     <!-- {{bookForm.value  | json }}  -->
+                      <br>
+                     
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Flight No</label>
+                      <input type="text" [value]="bindflightname" name="flightId" disabled class="form-control"  >       
+                     </div>
+                  
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label ">Airline Name</label>
+                       <input type="text" [value]="bindairline" name="airlineName"  disabled class="form-control"   > 
+                      </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label ">Place From</label>
+                        <input type="text" [value]="bindplacefrom" name="placeFrom" disabled class="form-control"    >
+                      </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label ">Place To</label>
+                      <input type="text" [value]="bindplaceto" name="placeTo" disabled  class="form-control"   >
+                    </div>
+                   
+                
+            
+            
+            
+                </div>
+                <div class="col-md-5" >
+                    <div class="mb-3">
+                      </div>
+                      <h3>Booking Details</h3>
+                      <br>
+                     
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Name</label>
+                      <input type="text"  formControlName="Name" class="form-control"  >       
+                     </div>
+                  
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label ">Email</label>
+                       <input type="text" formControlName="Email" class="form-control"  > 
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label ">No of Seats</label>
+                       <input type="number" formControlName="NoofSeats"  class="form-control"  > 
+                      </div>
+                 </div>
+               
+            </div>
+          
+        
+        </form>
+        <div class="">
+          <div class="mb-3">
+             <h3>Add Passengers</h3>
+             <table class="table table-striped table-bordered table-sm">
+               <thead >
+                   <tr >
+                       <th>Passenger Name</th>
+                       <th>Gender</th>
+                       <th>Age</th>
+                       <th>Meal</th>
+                       <th>SeatType</th>
+                       <th>Add/Delete</th>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr *ngFor="let field of fieldArray; let i = index" class="table-success">
+                       <td>
+                           <input [(ngModel)]="field.PassengerName" class="form-control" type="text" name="{{field.PassengerName}}" />
+                       </td>
+                       <td>
+                           <input [(ngModel)]="field.Gender" class="form-control" type="text" name="{{field.Gender}}" />
+                       </td>
+                       <td>
+                        <input [(ngModel)]="field.Age" class="form-control" type="number" name="{{field.Age}}" />
+                    </td>
+                       <td>
+                         <input [(ngModel)]="field.Meal" class="form-control" type="text" name="{{field.Meal}}" />
+                     </td>
+                       <td>
+                         <input [(ngModel)]="field.seattype" class="form-control" type="text" name="{{field.seattype}}" />
+                     </td>
+                       <td>
+                           <button class="btn btn-outline-danger"  type="button" (click)="deleteFieldValue(i)">Remove</button>
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>
+                           <input class="form-control" type="text" id="newPassengerName" [(ngModel)]="new.PassengerName" name="newPassengerName" />
+                       </td>
+                       <td>
+                        <input class="form-control" type="text" id="newGender" [(ngModel)]="new.Gender" name="newGender" />
+                    </td>
+                       <td>
+                         <input class="form-control" type="number" id="newAge" [(ngModel)]="new.Age" name="newAge" />
+                     </td>
+                   <td>
+                     <input class="form-control" type="text" id="newMeal" [(ngModel)]="new.Meal" name="newMeal" />
+                  </td>
+                  <td>
+                   <input class="form-control" type="text" id="newseattype" [(ngModel)]="new.seattype" name="newseattype" />
+                  </td>
+                   
+                       <td>
+                           <button class="btn btn-outline-success" type="button" (click)="addFieldValue()">Add</button>
+                       </td>
+                   </tr>
+               </tbody>
+               </table>
+             </div>
+           
+        </div>
+        <button  (click)="AddBooking()"  class=" col-md-3 btn btn-primary">Book Flight</button>
+      </div>
+      <br>
+    </div>
+   
+  </section>
